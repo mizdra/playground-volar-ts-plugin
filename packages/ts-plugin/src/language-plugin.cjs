@@ -52,12 +52,16 @@ exports.createCssModuleLanguagePlugin = function createCssModuleLanguagePlugin()
 }
 
 /**
+ * @typedef {Pick<import('@volar/language-core').CodeMapping, 'generatedOffsets' | 'sourceOffsets' | 'lengths'>} Mapping
+ */
+
+/**
  * 
  * @param {string} cssModuleText 
- * @returns {{ text: string, mapping: { sourceOffsets: number[], generatedOffsets: number[], lengths: number[] } }}
+ * @returns {{ text: string, mapping: Mapping }}
  */
 function createDts(cssModuleText) {
-  /** @type {{ sourceOffsets: number[], generatedOffsets: number[], lengths: number[] }} */
+  /** @type {Mapping} */
   const mapping = { generatedOffsets: [], sourceOffsets: [], lengths: [] };
 
   const result = cssModuleText.match(/\.([a-zA-Z0-9_-]+)/g);
@@ -66,7 +70,7 @@ function createDts(cssModuleText) {
   const classes = result.map(i => i.slice(1));
   const dtsText = `
 declare const styles:
-${classes.map(i => `  & { '${i}': string }`).join('\n')}
+${classes.map(i => `  & { ${i}: string }`).join('\n')}
 ;
 export default styles;
   `.trim();
