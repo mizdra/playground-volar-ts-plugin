@@ -1,3 +1,5 @@
-import I_PNG from './ts-logo-256.png';
+import styles from './a.module.css';
 
-console.log(I_PNG.src);
+styles.a_1;
+styles.a_2;
+styles.a_3;

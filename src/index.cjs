@@ -1,5 +1,5 @@
 const { createLanguageServicePlugin } = require('@volar/typescript/lib/quickstart/createLanguageServicePlugin.js');
-const { createPngLanguagePlugin } = require('./language-plugin.cjs');
+const { createCssModuleLanguagePlugin } = require('./language-plugin.cjs');
 
 module.exports = createLanguageServicePlugin((ts, info) => {
   if (info.project.projectKind !== ts.server.ProjectKind.Configured) {
@@ -7,6 +7,6 @@ module.exports = createLanguageServicePlugin((ts, info) => {
   }
 
   return {
-    languagePlugins: [createPngLanguagePlugin()],
+    languagePlugins: [createCssModuleLanguagePlugin()],
   };
 });

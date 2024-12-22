@@ -1,15 +1,17 @@
 {
-  "name": "typescript-plugin-png",
+  "name": "typescript-plugin-css-modules",
   "type": "module",
   "main": "./src/index.cjs",
   "license": "CC0-1.0",
   "private": true,
   "scripts": {},
   "workspaces": [
+    "extension",
     "example"
   ],
   "devDependencies": {
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.2",
+    "@types/vscode": "^1.96.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
