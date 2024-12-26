@@ -1,5 +1,5 @@
 {
-  "name": "volar-ts-plugin-template",
+  "name": "playground-volar-vscode-extension-on-ts-plugin",
   "type": "module",
   "license": "CC0-1.0",
   "private": true,
